@@ -1,0 +1,15 @@
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\bin\Debug\net9.0\WhatThreeGits.exe
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\bin\Debug\net9.0\WhatThreeGits.deps.json
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\bin\Debug\net9.0\WhatThreeGits.runtimeconfig.json
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\bin\Debug\net9.0\WhatThreeGits.dll
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\bin\Debug\net9.0\WhatThreeGits.pdb
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\obj\Debug\net9.0\WhatThreeGits.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\obj\Debug\net9.0\WhatThreeGits.AssemblyInfoInputs.cache
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\obj\Debug\net9.0\WhatThreeGits.AssemblyInfo.cs
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\obj\Debug\net9.0\WhatThreeGits.csproj.CoreCompileInputs.cache
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\obj\Debug\net9.0\WhatThreeGits.dll
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\obj\Debug\net9.0\refint\WhatThreeGits.dll
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\obj\Debug\net9.0\WhatThreeGits.pdb
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\obj\Debug\net9.0\WhatThreeGits.genruntimeconfig.cache
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\obj\Debug\net9.0\ref\WhatThreeGits.dll
+C:\projects\personal\Sandbox\WhatThreeGits\WhatThreeGits\bin\Debug\net9.0\words.txt
