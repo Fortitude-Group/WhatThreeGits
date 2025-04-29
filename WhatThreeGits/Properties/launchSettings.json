@@ -2,7 +2,7 @@
   "profiles": {
     "WhatThreeGits": {
       "commandName": "Project",
-      "commandLineArgs": "encode"
+      "commandLineArgs": "decode a/v.biosociology.peaker.volumist.flippity-flop.criteriia.bonfire.lenthiel.sacbrood"
     }
   }
 }

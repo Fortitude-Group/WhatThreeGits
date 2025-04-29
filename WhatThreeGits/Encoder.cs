@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace WhatThreeGits;
 
-internal sealed class Encoder
+public sealed class Encoder
 {
     private readonly string[] _words;          // main vocabulary
     private readonly string[]? _crcWords;      // optional checksum vocabulary (256 words)
@@ -189,4 +189,41 @@ internal sealed class Encoder
         }
         return d[s.Length & 1, t.Length];
     }
+
+
+    // ── Encoder.cs (add two tiny helpers) ──────────────────────────────
+    public string EncodeShort(ReadOnlySpan<byte> sha1)          // 3-word, 48-bit slice
+    {
+        Span<byte> slice = stackalloc byte[6];    // first 48 bits = 12 hex chars
+        sha1[..6].CopyTo(slice);
+        BigInteger v = new BigInteger(slice.ToArray().Reverse().Append((byte)0).ToArray());
+
+        int baseN = _words.Length;
+        int[] idx = { (int)(v % baseN), 0, 0 };
+        v /= baseN; idx[1] = (int)(v % baseN);
+        v /= baseN; idx[2] = (int)v;
+
+        return $"{_words[idx[2]]}.{_words[idx[1]]}.{_words[idx[0]]}";
+    }
+
+    /* decode chooses 3-word or 11(+1)-word automatically */
+    public string DecodeAuto(string phrase)
+        => phrase.Split('.', StringSplitOptions.RemoveEmptyEntries).Length switch
+        {
+            3 => DecodeShort(phrase),
+            _ => Decode(phrase, verifyChecksum: true)
+        };
+
+    private string DecodeShort(string phrase)                  // returns 12-hex slice
+    {
+        string[] tok = phrase.Split('.', StringSplitOptions.RemoveEmptyEntries);
+        if (tok.Length != 3) throw new FormatException("need exactly 3 words");
+        BigInteger v = 0; int baseN = _words.Length;
+        foreach (string w in tok) v = v * baseN + IndexOfNearestWord(w);
+        var bytes = v.ToByteArray();
+        Array.Resize(ref bytes, 6); Array.Reverse(bytes);
+        return Convert.ToHexString(bytes).ToLowerInvariant();   // 12 hex chars
+    }
+
+
 }

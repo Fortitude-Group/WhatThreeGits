@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatThreeGits")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cbd04d36a0e5d12532ccebe6ce81fe9e61342a7")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatThreeGits")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatThreeGits")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

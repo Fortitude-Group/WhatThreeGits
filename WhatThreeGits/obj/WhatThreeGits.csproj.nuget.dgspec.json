@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\personal\\Sandbox\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj": {}
+    "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj": {}
   },
   "projects": {
-    "C:\\projects\\personal\\Sandbox\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj": {
+    "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\personal\\Sandbox\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj",
+        "projectUniqueName": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj",
         "projectName": "WhatThreeGits",
-        "projectPath": "C:\\projects\\personal\\Sandbox\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj",
+        "projectPath": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj",
         "packagesPath": "C:\\Users\\Rob\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\personal\\Sandbox\\WhatThreeGits\\WhatThreeGits\\obj\\",
+        "outputPath": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
