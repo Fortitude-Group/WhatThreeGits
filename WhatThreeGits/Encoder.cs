@@ -1,26 +1,20 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Numerics;
-using System.Security.Cryptography;
+﻿using System.Numerics;
 
-namespace WhatThreeGits;
+namespace WTG;
 
 public sealed class Encoder
 {
-    private readonly string[] _words;          // main vocabulary
-    private readonly string[]? _crcWords;      // optional checksum vocabulary (256 words)
+    private readonly string[] _words; // main vocabulary
+    private readonly string[]? _crcWords; // optional checksum vocabulary (256 words)
     private readonly int _bitsPerWord;
-    private readonly int _wordsPerHash;        // 11 for SHA‑1 + 1 CRC
+    private readonly int _wordsPerHash; // 11 for SHA‑1 + 1 CRC
     private const int _sha1Bits = 160;
 
     public Encoder(string wordsFile, string? crcFile = null)
     {
-        _words = File.ReadAllLines(wordsFile)
-                     .Select(w => w.Trim().ToLowerInvariant())
-                     .Where(w => w.Length > 0).Distinct().ToArray();
+        _words = File.ReadAllLines(Locate(wordsFile))
+            .Select(w => w.Trim().ToLowerInvariant())
+            .Where(w => w.Length > 0).Distinct().ToArray();
 
         _bitsPerWord = (int)Math.Floor(Math.Log2(_words.Length));
         _wordsPerHash = (int)Math.Ceiling((double)_sha1Bits / _bitsPerWord);
@@ -30,11 +24,11 @@ public sealed class Encoder
             throw new InvalidOperationException("Word list too small; need ≥ ~4 000 entries.");
         }
 
-        if (crcFile is not null && File.Exists(crcFile))
+        if (crcFile is not null && File.Exists(Locate(crcFile)))
         {
             _crcWords = File.ReadAllLines(crcFile)
-                            .Select(w => w.Trim().ToLowerInvariant())
-                            .Where(w => w.Length > 0).Distinct().ToArray();
+                .Select(w => w.Trim().ToLowerInvariant())
+                .Where(w => w.Length > 0).Distinct().ToArray();
             if (_crcWords.Length != 256)
             {
                 throw new InvalidOperationException("crc.txt must contain exactly 256 words.");
@@ -81,7 +75,7 @@ public sealed class Encoder
     public string Decode(string phrase, bool verifyChecksum = true)
     {
         var tokens = phrase.Split('.', StringSplitOptions.RemoveEmptyEntries)
-                           .Select(t => t.ToLowerInvariant()).ToList();
+            .Select(t => t.ToLowerInvariant()).ToList();
 
         // optional CRC word at the end?
         string? crcToken = null;
@@ -155,6 +149,7 @@ public sealed class Encoder
                 crc = (byte)((crc & 0x80) != 0 ? (crc << 1) ^ 0x07 : crc << 1);
             }
         }
+
         return crc;
     }
 
@@ -187,21 +182,24 @@ public sealed class Encoder
                     d[(i - 1) & 1, j - 1] + cost);
             }
         }
+
         return d[s.Length & 1, t.Length];
     }
 
 
     // ── Encoder.cs (add two tiny helpers) ──────────────────────────────
-    public string EncodeShort(ReadOnlySpan<byte> sha1)          // 3-word, 48-bit slice
+    public string EncodeShort(ReadOnlySpan<byte> sha1) // 3-word, 48-bit slice
     {
-        Span<byte> slice = stackalloc byte[6];    // first 48 bits = 12 hex chars
+        Span<byte> slice = stackalloc byte[6]; // first 48 bits = 12 hex chars
         sha1[..6].CopyTo(slice);
         BigInteger v = new BigInteger(slice.ToArray().Reverse().Append((byte)0).ToArray());
 
         int baseN = _words.Length;
         int[] idx = { (int)(v % baseN), 0, 0 };
-        v /= baseN; idx[1] = (int)(v % baseN);
-        v /= baseN; idx[2] = (int)v;
+        v /= baseN;
+        idx[1] = (int)(v % baseN);
+        v /= baseN;
+        idx[2] = (int)v;
 
         return $"{_words[idx[2]]}.{_words[idx[1]]}.{_words[idx[0]]}";
     }
@@ -214,16 +212,32 @@ public sealed class Encoder
             _ => Decode(phrase, verifyChecksum: true)
         };
 
-    private string DecodeShort(string phrase)                  // returns 12-hex slice
+    private string DecodeShort(string phrase) // returns 12-hex slice
     {
         string[] tok = phrase.Split('.', StringSplitOptions.RemoveEmptyEntries);
         if (tok.Length != 3) throw new FormatException("need exactly 3 words");
-        BigInteger v = 0; int baseN = _words.Length;
+        BigInteger v = 0;
+        int baseN = _words.Length;
         foreach (string w in tok) v = v * baseN + IndexOfNearestWord(w);
         var bytes = v.ToByteArray();
-        Array.Resize(ref bytes, 6); Array.Reverse(bytes);
-        return Convert.ToHexString(bytes).ToLowerInvariant();   // 12 hex chars
+        Array.Resize(ref bytes, 6);
+        Array.Reverse(bytes);
+        return Convert.ToHexString(bytes).ToLowerInvariant(); // 12 hex chars
     }
 
 
+    private static string Locate(string fileName)
+    {
+        // absolute path – nothing to do
+        if (Path.IsPathRooted(fileName)) return fileName;
+
+        // try CWD (override with --words ./foo.txt)
+        if (File.Exists(fileName)) return Path.GetFullPath(fileName);
+
+        // fall back to the directory where the tool is installed
+        string probe = Path.Combine(AppContext.BaseDirectory, fileName);
+        if (File.Exists(probe)) return probe;
+
+        throw new FileNotFoundException($"Word list not found: {fileName}");
+    }
 }

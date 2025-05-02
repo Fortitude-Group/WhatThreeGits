@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\projects\\personal\\WhatThreeGits\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5DF969DB-F73B-4FA8-8EAE-22C00616B140}|WhatThreeGits\\WhatThreeGits.csproj|c:\\projects\\personal\\whatthreegits\\whatthreegits\\encoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5DF969DB-F73B-4FA8-8EAE-22C00616B140}|WhatThreeGits\\WhatThreeGits.csproj|solutionrelative:whatthreegits\\encoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F134BBC8-FE19-492F-AE3B-0FBFDBD0968B}|WhatThreeGits.Tests\\WhatThreeGits.Tests.csproj|c:\\projects\\personal\\whatthreegits\\whatthreegits.tests\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F134BBC8-FE19-492F-AE3B-0FBFDBD0968B}|WhatThreeGits.Tests\\WhatThreeGits.Tests.csproj|solutionrelative:whatthreegits.tests\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5DF969DB-F73B-4FA8-8EAE-22C00616B140}|WhatThreeGits\\WhatThreeGits.csproj|c:\\projects\\personal\\whatthreegits\\whatthreegits\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5DF969DB-F73B-4FA8-8EAE-22C00616B140}|WhatThreeGits\\WhatThreeGits.csproj|solutionrelative:whatthreegits\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F134BBC8-FE19-492F-AE3B-0FBFDBD0968B}|WhatThreeGits.Tests\\WhatThreeGits.Tests.csproj|c:\\projects\\personal\\whatthreegits\\whatthreegits.tests\\mstestsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F134BBC8-FE19-492F-AE3B-0FBFDBD0968B}|WhatThreeGits.Tests\\WhatThreeGits.Tests.csproj|solutionrelative:whatthreegits.tests\\mstestsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5DF969DB-F73B-4FA8-8EAE-22C00616B140}|WhatThreeGits\\WhatThreeGits.csproj|c:\\projects\\personal\\whatthreegits\\whatthreegits\\encoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DF969DB-F73B-4FA8-8EAE-22C00616B140}|WhatThreeGits\\WhatThreeGits.csproj|solutionrelative:whatthreegits\\encoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 326,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Test1.cs",
-              "DocumentMoniker": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits.Tests\\Test1.cs",
-              "RelativeDocumentMoniker": "WhatThreeGits.Tests\\Test1.cs",
-              "ToolTip": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits.Tests\\Test1.cs",
-              "RelativeToolTip": "WhatThreeGits.Tests\\Test1.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAIApwD8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T22:49:23.59Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MSTestSettings.cs",
-              "DocumentMoniker": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits.Tests\\MSTestSettings.cs",
-              "RelativeDocumentMoniker": "WhatThreeGits.Tests\\MSTestSettings.cs",
-              "ToolTip": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits.Tests\\MSTestSettings.cs",
-              "RelativeToolTip": "WhatThreeGits.Tests\\MSTestSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T22:49:21.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Encoder.cs",
               "DocumentMoniker": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\Encoder.cs",
               "RelativeDocumentMoniker": "WhatThreeGits\\Encoder.cs",
               "ToolTip": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\Encoder.cs",
               "RelativeToolTip": "WhatThreeGits\\Encoder.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAIApwAoAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAMwPIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T10:29:59.971Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\Program.cs",
               "RelativeDocumentMoniker": "WhatThreeGits\\Program.cs",
               "ToolTip": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\Program.cs",
               "RelativeToolTip": "WhatThreeGits\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAADYAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAowE0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T10:29:24.495Z",
               "EditorCaption": ""

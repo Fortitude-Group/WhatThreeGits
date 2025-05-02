@@ -5,10 +5,10 @@
   },
   "projects": {
     "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "restore": {
         "projectUniqueName": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj",
-        "projectName": "WhatThreeGits",
+        "projectName": "WTG",
         "projectPath": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\WhatThreeGits.csproj",
         "packagesPath": "C:\\Users\\Rob\\.nuget\\packages\\",
         "outputPath": "C:\\projects\\personal\\WhatThreeGits\\WhatThreeGits\\obj\\",

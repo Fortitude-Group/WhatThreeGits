@@ -2,7 +2,7 @@
   "profiles": {
     "WhatThreeGits": {
       "commandName": "Project",
-      "commandLineArgs": "decode a/v.biosociology.peaker.volumist.flippity-flop.criteriia.bonfire.lenthiel.sacbrood"
+      "commandLineArgs": "decode abdu.mimzy.overdrinking --json"
     }
   }
 }
