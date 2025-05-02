@@ -367,3 +367,6 @@ FodyWeavers.xsd
 Quizly.App.Service.CLI.dll
 
 Quizly.App.Service.CLI.exe
+
+**/obj
+**/bin
